@@ -1,0 +1,63 @@
+<!-- Escreva um programa em JavaScript que solicite ao usuário o nome, altura em centímetros e peso de uma pessoa. O programa deve calcular o índice de massa corporal (IMC) dessa pessoa, considerando a fórmula IMC = peso / (altura * altura), onde a altura deve ser convertida de centímetros para metros. Em seguida, o programa deve classificar o peso com base no IMC calculado, de acordo com a tabela a seguir:
+
+Menor que 16: Baixo peso muito grave
+De 16 a 16.99: Baixo peso grave
+De 17 a 18.49: Baixo peso
+De 18.50 a 24.99: Peso normal
+De 25 a 29.99: Sobrepeso
+De 30 a 34.99: Obesidade grau I
+De 35 a 39.99: Obesidade grau II
+Maior ou igual a 40: Obesidade grau III
+O programa deve exibir o nome da pessoa, o índice de massa corporal calculado e a classificação correspondente. -->
+
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATIVIDADE</title>
+</head>
+<body>
+    <script>
+        let nome = prompt("Digite Seu Nome: ")
+        let altura = Number(prompt("Digite Sua Altura em (CM): "))
+        let peso = Number(prompt("Digite Seu Peso em (KG) : "))
+        
+        let conversor = altura/100 
+
+        let conversor2 = conversor**2 
+
+        let IMC = peso/conversor2
+
+        // if(IMC<16)
+        let formatado = IMC.toFixed(2); // Formata o número com 2 casas decimais
+        
+        if(formatado<16){
+            console.log(`nome: ${nome} Indice de massa corporal: ${formatado} diagnostico: você está com Baixo Peso Muito Grave`)
+        }
+        else if(formatado>=16 && formatado<=16.99){
+            console.log(`nome: ${nome} Indice de massa corporal: ${formatado} diagnostico: você está com Baixo Peso Grave`)
+        }
+        else if(formatado>=17 && formatado<=18.49){
+            console.log(`nome: ${nome} Indice de massa corporal: ${formatado} diagnostico: você está com Baixo peso`)
+        }
+        else if(formatado>=18.50 && formatado<=24.99){
+            console.log(`nome: ${nome} Indice de massa corporal: ${formatado} diagnostico: você está com Peso normal`)
+        }
+        else if(formatado>=25 && formatado<=29.99){
+            console.log(`nome: ${nome} Indice de massa corporal: ${formatado} diagnostico: você está com Sobrepeso`)
+        }
+        else if(formatado>=30 && formatado<=34.99){
+            console.log(`nome: ${nome} Indice de massa corporal: ${formatado} diagnostico: você está com Obesidade grau I`)
+        }
+        else if(formatado>=35 && formatado<=39.99){
+            console.log(`nome: ${nome} Indice de massa corporal: ${formatado} diagnostico: você está com Obesidade grau II`)
+        }
+        else if(formatado>=40){
+            console.log(`nome: ${nome} Indice de massa corporal: ${formatado} diagnostico: você está com Obesidade grau III`)
+        }
+
+    </script>
+</body>
+</html>
+
