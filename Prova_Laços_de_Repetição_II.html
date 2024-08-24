@@ -1,0 +1,63 @@
+<!-- Você é um desenvolvedor de software que trabalha em uma equipe especializada 
+em criar ferramentas matemáticas para uma empresa do mercado financeiro. 
+A empresa precisa de uma nova funcionalidade para sua plataforma online, 
+permitindo que os usuários obtenham informações sobre cálculos matemáticos 
+importantes relacionados aos investimentos.
+
+
+
+Sua tarefa é criar um módulo JavaScript que ofereça aos usuários a possibilidade
+de inserir um número inteiro positivo e, em resposta, calcular o fatorial
+desse número e também a sequência de Fibonacci até aquele número. Isso ajudará
+os investidores a realizar análises mais detalhadas sobre suas decisões financeiras. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+</head>
+<body>
+
+
+
+    <script>
+        console.log("Seja bem vindo a Super calculadora!")
+
+        let numero = parseInt(prompt("Digite um numero inteiro: "))
+        let resultado = 0 
+
+        function calcularFatorial(n) {
+            let resultado = 1;
+            let conter = n; 
+    
+            while (conter > 0) {
+                resultado *= conter; 
+                conter -= 1; 
+            }
+            console.log(`O fatorial do número (${numero}) é ${resultado}!`)
+        }
+        calcularFatorial(numero)
+
+
+        function calcularFibonacci(numero) {
+            let fibonacci = [0, 1];
+            let i = 2;
+
+            while (true) {
+                let proximo = fibonacci[i - 1] + fibonacci[i - 2];
+                if (proximo > numero) {
+                    break;
+                }
+                fibonacci.push(proximo);
+                i++;
+            }
+        
+            console.log(`Sequência de Fibonacci do numero (${numero}) é: ${fibonacci.join(", ")}`);
+        }
+        calcularFibonacci(numero)
+
+    </script>
+</body>
+</html>
